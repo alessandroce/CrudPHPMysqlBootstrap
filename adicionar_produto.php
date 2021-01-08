@@ -45,10 +45,21 @@
   <div class="form-group">
     <label>Categoria</label>
     <select class="form-control" name="categoria" >
-      <option>Periféricos</option>
-      <option>Hardware</option>
-      <option>Software</option>
-      <option>Celulares</option>
+
+      <?php 
+        include 'conexao.php';
+        $sql = "select * from categoria order by nome_categoria"; 
+        $buscar = mysqli_query($conexao,$sql);
+        while ($array = mysqli_fetch_array($buscar)) {
+          $id_categoria = $array['id_categoria'];
+          $nome_categoria = $array['nome_categoria'];
+
+       ?>
+       
+       <option><?php echo $nome_categoria ?></option>
+       
+       <?php } ?>    
+
     </select>
   </div>
 
