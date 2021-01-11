@@ -76,10 +76,10 @@
         $sql = "select * from fornecedor order by nome_forn asc";
         $buscar = mysqli_query($conexao,$sql);
         while ($array = mysqli_fetch_array($buscar)){
-          $id_forn = $array['id_forn'];
-          $nome_forn = $array['nome_forn'];
+          $id_fornecedor = $array['id_forn'];
+          $nome_fornecedor = $array['nome_forn'];
         ?>
-        <option><?php echo $nome_forn ?></option>
+        <option><?php echo $nome_fornecedor ?></option>
       <?php } ?>
     </select>
   </div>

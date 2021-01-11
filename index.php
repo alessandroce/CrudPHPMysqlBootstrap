@@ -1,75 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Menu</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<meta charset="utf-8">
+	<title>tela de Login</title>
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<style type="text/css">
+	#tamanho {
+		width: 350px;
+	}
+</style>
 
 </head>
 <body>
 
 
+<div class="container" id="tamanho" style="margin-top: 100px; border-radius: 15px; border: 2px solid #f3f3f3">
 
+<div style="padding: 10px">
 
-  <div class="container" style="margin-top: 100px">
-  	
+	<center>
+      <img src="imagem/cadeado.png" width="125px" height="125px">	
+    </center>
+<form>
+	
+	<div class="form-group">	
+      <label>Usuário</label>
+      <input type="text" name="usuario" class="form-control" placeholder="usuario" autocomplete="off" required>
+	</div>
 
-  <div class="row">
+	<div class="form-group">	
+      <label>Senha</label>
+      <input type="password" name="senha" class="form-control" placeholder="senha" autocomplete="off" required>
+	</div>
 
+</form>
 
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Adicionar produto</h5>
-        <p class="card-text">Opção para adicionar produtos em nosso estoque.</p>
-        <a href="adicionar_produto.php" class="btn btn-primary">Cadastrar Produto</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Lista de produtos</h5>
-        <p class="card-text">Visualizar, Editar e Excluir os produtos.</p>
-        <a href="listar_produtos.php" class="btn btn-primary">Produtos</a>
-      </div>
-    </div>
-  </div>
+<div style="text-align: right;">
+	<button type="submit" class="btn btn-sm btn-success"> Entrar
+		
+	</button>
+</div>
 
-
-  <div class="col-sm-6" style="margin-top: 20px">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Adicionar Categoria</h5>
-        <p class="card-text">Opção para adicionar categoria.</p>
-        <a href="adicionar_categoria.php" class="btn btn-primary">Cadastrar Produto</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6" style="margin-top: 20px">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Adicionar Fornecedor</h5>
-        <p class="card-text">Opção para adicionar fornecedores.</p>
-        <a href="#" class="btn btn-primary">Cadastrar</a>
-      </div>
-    </div>
-  </div>
-
-
-  </div>
-
-
-
-  </div>
-
-
-
-  </div>
-
-
-
-
+</div>
+</div>
 
 
 
