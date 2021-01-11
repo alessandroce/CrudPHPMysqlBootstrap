@@ -46,12 +46,23 @@
       </div>
     </div>
   </div>
+  
   <div class="col-sm-6" style="margin-top: 20px">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Adicionar Fornecedor</h5>
         <p class="card-text">Opção para adicionar fornecedores.</p>
         <a href="adicionar_fornecedor.php" class="btn btn-primary">Cadastrar</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6" style="margin-top: 20px">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Aprovar Usuários</h5>
+        <p class="card-text">Aprovar usuários cadastrados.</p>
+        <a href="aprovar_usuarios.php" class="btn btn-primary">Aprovar</a>
       </div>
     </div>
   </div>
