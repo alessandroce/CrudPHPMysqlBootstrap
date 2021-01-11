@@ -10,6 +10,9 @@
 <style type="text/css">
 	#tamanho {
 		width: 350px;
+    -webkit-box-shadow: 10px 10px 28px -8px rgba(194,194,194,1);
+    -moz-box-shadow: 10px 10px 28px -8px rgba(194,194,194,1);
+    box-shadow: 10px 10px 28px -8px rgba(194,194,194,1);
 	}
 </style>
 
@@ -47,8 +50,13 @@
 </div>
 </div>
 
+<div style="margin-top: 10px">
 
+<center>
+	<small> Você não possui cadastro? Clique <a href="cadastro_usuario_externo.php">aqui</a> </small>
+</center>
 
+</div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
