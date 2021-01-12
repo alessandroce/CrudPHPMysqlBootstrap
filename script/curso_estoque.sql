@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Tempo de geração: 11-Jan-2021 às 02:13
--- Versão do servidor: 10.4.10-MariaDB
--- versão do PHP: 7.3.12
+-- Host: 127.0.0.1
+-- Tempo de geração: 12-Jan-2021 às 17:38
+-- Versão do servidor: 10.4.17-MariaDB
+-- versão do PHP: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -28,23 +27,22 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `categoria`
 --
 
-DROP TABLE IF EXISTS `categoria`;
-CREATE TABLE IF NOT EXISTS `categoria` (
-  `id_categoria` int(11) NOT NULL AUTO_INCREMENT,
-  `categoria` varchar(200) NOT NULL,
-  PRIMARY KEY (`id_categoria`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+CREATE TABLE `categoria` (
+  `id_categoria` int(11) NOT NULL,
+  `nome_categoria` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `categoria`
 --
 
-INSERT INTO `categoria` (`id_categoria`, `categoria`) VALUES
-(1, 'PerifÃ©rico'),
-(2, 'Game'),
-(3, 'Hardware'),
-(4, 'Software'),
-(5, 'Redes Fibra');
+INSERT INTO `categoria` (`id_categoria`, `nome_categoria`) VALUES
+(1, 'Games'),
+(2, 'Jogos'),
+(3, 'Jogos'),
+(4, 'Periféricos'),
+(5, 'Hardware'),
+(6, 'Redes');
 
 -- --------------------------------------------------------
 
@@ -52,46 +50,80 @@ INSERT INTO `categoria` (`id_categoria`, `categoria`) VALUES
 -- Estrutura da tabela `estoque`
 --
 
-DROP TABLE IF EXISTS `estoque`;
-CREATE TABLE IF NOT EXISTS `estoque` (
-  `id_estoque` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `estoque` (
+  `id_estoque` int(11) NOT NULL,
   `nroproduto` int(11) NOT NULL,
   `nomeproduto` varchar(200) NOT NULL,
   `categoria` varchar(100) NOT NULL,
   `quantidade` int(11) NOT NULL,
-  `fornecedor` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id_estoque`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
-
---
--- Extraindo dados da tabela `estoque`
---
-
-INSERT INTO `estoque` (`id_estoque`, `nroproduto`, `nomeproduto`, `categoria`, `quantidade`, `fornecedor`) VALUES
-(1, 87878454, 'mouse t8', 'PerifÃ©ricos', 4, 'Fornecedor B'),
-(3, 7897, 'Headset', 'PerifÃ©ricos', 11, 'Fornecedor A');
+  `fornecedor` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `fornecedor`
+-- Estrutura da tabela `usuarios`
 --
 
-DROP TABLE IF EXISTS `fornecedor`;
-CREATE TABLE IF NOT EXISTS `fornecedor` (
-  `id_forn` int(11) NOT NULL AUTO_INCREMENT,
-  `nome_forn` varchar(200) NOT NULL,
-  PRIMARY KEY (`id_forn`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+CREATE TABLE `usuarios` (
+  `id_usuario` int(11) NOT NULL,
+  `nome_usuario` varchar(200) NOT NULL,
+  `mail_usuario` varchar(250) NOT NULL,
+  `senha_usuario` varchar(50) NOT NULL,
+  `nivel_usuario` int(2) NOT NULL,
+  `status` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `fornecedor`
+-- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `fornecedor` (`id_forn`, `nome_forn`) VALUES
-(1, 'RMG Transportes'),
-(2, 'Da Silva Limitada'),
-(3, 'Transportes Manzolin');
+INSERT INTO `usuarios` (`id_usuario`, `nome_usuario`, `mail_usuario`, `senha_usuario`, `nivel_usuario`, `status`) VALUES
+(4, 'Ricardo', 'faleconosco@milbrath.com.br', '81bce1f3bf343c464685d875c626820cdb58e309', 1, 'Ativo');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `categoria`
+--
+ALTER TABLE `categoria`
+  ADD PRIMARY KEY (`id_categoria`);
+
+--
+-- Índices para tabela `estoque`
+--
+ALTER TABLE `estoque`
+  ADD PRIMARY KEY (`id_estoque`);
+
+--
+-- Índices para tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id_usuario`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `categoria`
+--
+ALTER TABLE `categoria`
+  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de tabela `estoque`
+--
+ALTER TABLE `estoque`
+  MODIFY `id_estoque` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
