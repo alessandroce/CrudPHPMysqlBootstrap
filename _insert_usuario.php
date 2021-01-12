@@ -8,9 +8,10 @@
   $nivel = $_POST['nivelusuario'];
   $status = 'Ativo';
 
-  $sql = "INSERT INTO usuarios (nome_usuario, mail_usuario, senha_usuario, nivel_usuario, status) values ('$nomeusuario','$email',sha1('$senha'),$nivel,'$status' )";
+  $sql = "INSERT INTO usuarios (nome_usuario, mail_usuario, senha_usuario, nivel_usuario, status) values ('$nomeusuario', '$email', sha1('$senha'), $nivel,'$status' )";
 
   $inserir = mysqli_query($conexao,$sql);
+
 
  ?>
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
