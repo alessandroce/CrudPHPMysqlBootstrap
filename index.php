@@ -27,6 +27,7 @@
 			<center>
 				<img src="imagem/cadeado.png" width="125px" height="125px">	
 			</center>
+			
 			<form action="index1.php" method="post">
 				
 				<div class="form-group">	

@@ -35,7 +35,7 @@
 
       include 'conexao.php';
 
-      $sql = "SELECT * FROM usuarios"; // WHERE status = 'Inativo' ";
+      $sql = "SELECT * FROM usuarios WHERE status = 'Inativo' ";
 
       $busca = mysqli_query($conexao,$sql);
 
@@ -43,9 +43,9 @@
 
 
         $id_usuario = $array['id_usuario'];
-        $usuario = $array['nome_usuario'];
-        $mail = $array['mail_usuario'];
-        $nivel = $array['nivel_usuario'];
+        $usuario    = $array['nome_usuario'];
+        $mail       = $array['mail_usuario'];
+        $nivel      = $array['nivel_usuario'];
         
         ?> 
 

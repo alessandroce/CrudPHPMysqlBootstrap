@@ -7,12 +7,20 @@
 
 </head>
 <body>
+  <?php 
 
+     session_start();
+     $usuario = $_SESSION['usuario'];
+     
+     $_SESSION['usuario'];
 
+     if (!isset( $_SESSION['usuario'])) {
+       header('Location: index.php');
+     }
 
+   ?>
 
   <div class="container" style="margin-top: 100px">
-  	
 
   <div class="row">
 
@@ -53,6 +61,16 @@
         <h5 class="card-title">Adicionar Fornecedor</h5>
         <p class="card-text">Opção para adicionar fornecedores.</p>
         <a href="adicionar_fornecedor.php" class="btn btn-primary">Cadastrar</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6" style="margin-top: 20px">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Cadastrar Usuário</h5>
+        <p class="card-text">Cadastrar Usuários.</p>
+        <a href="adicionar_fornecedor.php" class="btn btn-primary">Cadastrar Usuário</a>
       </div>
     </div>
   </div>
