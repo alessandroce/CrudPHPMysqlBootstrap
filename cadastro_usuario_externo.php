@@ -12,6 +12,7 @@
 			<a href="index.php" role="button" class="btn btn-sm btn-primary">Voltar</a>
 		</div>
 		<h4>Cadastro de Usuário</h4>
+		
 		<form action="_insert_usuario_externo.php" method="post">
 			<div class="form-group">
 				<label>Nome do Usuário</label>

@@ -1,5 +1,7 @@
 <?php 
+
   include 'conexao.php';
+  
   include 'script/password.php';
 
   $nomeusuario = $_POST['nomeusuario'];
@@ -8,7 +10,7 @@
   //$nivel = $_POST['nivelusuario'];
   $status = 'Inativo';
 
-  $sql = "INSERT INTO usuarios (nome_usuario, mail_usuario, senha_usuario, status) values ('$nomeusuario','$email',sha1('$senha'),'$status' )";
+  $sql = "INSERT INTO usuarios (nome_usuario, mail_usuario, senha_usuario, status) values ('$nomeusuario', '$email', sha1('$senha'), '$status' )";
 
   $inserir = mysqli_query($conexao,$sql);
 

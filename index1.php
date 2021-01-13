@@ -7,7 +7,7 @@ $usuario = $_POST['usuario'];
 
 $senhausuario = $_POST['senha'];
 
-$sql = "SELECT mail_usuario FROM usuarios WHERE mail_usuario = '$usuario' ";
+$sql = "SELECT mail_usuario, senha_usuario FROM usuarios WHERE mail_usuario = '$usuario' AND status = 'Ativo' ";
 
 $buscar = mysqli_query($conexao,$sql);
 
@@ -20,7 +20,9 @@ while ($array = mysqli_fetch_array($buscar)) {
   	
   	$senhadecodificada = sha1($senhausuario);
 
-	if ($total > 0) {
+    //echo $senha . '<br>' . $senhadecodificada;
+
+  if ($total > 0) {
   	 
       if ($senhadecodificada == $senha) {
         
@@ -36,6 +38,7 @@ while ($array = mysqli_fetch_array($buscar)) {
 	} else {
 		header('Location: erro.php');
 	}
+  
 }
 
 ?>
