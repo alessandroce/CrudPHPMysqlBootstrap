@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 12-Jan-2021 às 17:38
--- Versão do servidor: 10.4.17-MariaDB
--- versão do PHP: 7.4.13
+-- Host: 127.0.0.1:3306
+-- Tempo de geração: 13-Jan-2021 às 03:43
+-- Versão do servidor: 10.4.10-MariaDB
+-- versão do PHP: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -27,10 +28,12 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `categoria`
 --
 
-CREATE TABLE `categoria` (
-  `id_categoria` int(11) NOT NULL,
-  `nome_categoria` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+DROP TABLE IF EXISTS `categoria`;
+CREATE TABLE IF NOT EXISTS `categoria` (
+  `id_categoria` int(11) NOT NULL AUTO_INCREMENT,
+  `nome_categoria` varchar(200) NOT NULL,
+  PRIMARY KEY (`id_categoria`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `categoria`
@@ -50,13 +53,15 @@ INSERT INTO `categoria` (`id_categoria`, `nome_categoria`) VALUES
 -- Estrutura da tabela `estoque`
 --
 
-CREATE TABLE `estoque` (
-  `id_estoque` int(11) NOT NULL,
+DROP TABLE IF EXISTS `estoque`;
+CREATE TABLE IF NOT EXISTS `estoque` (
+  `id_estoque` int(11) NOT NULL AUTO_INCREMENT,
   `nroproduto` int(11) NOT NULL,
   `nomeproduto` varchar(200) NOT NULL,
   `categoria` varchar(100) NOT NULL,
   `quantidade` int(11) NOT NULL,
-  `fornecedor` varchar(100) DEFAULT NULL
+  `fornecedor` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id_estoque`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -65,65 +70,23 @@ CREATE TABLE `estoque` (
 -- Estrutura da tabela `usuarios`
 --
 
-CREATE TABLE `usuarios` (
-  `id_usuario` int(11) NOT NULL,
+DROP TABLE IF EXISTS `usuarios`;
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
   `nome_usuario` varchar(200) NOT NULL,
   `mail_usuario` varchar(250) NOT NULL,
   `senha_usuario` varchar(50) NOT NULL,
   `nivel_usuario` int(2) NOT NULL,
-  `status` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `status` varchar(50) NOT NULL,
+  PRIMARY KEY (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `usuarios`
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nome_usuario`, `mail_usuario`, `senha_usuario`, `nivel_usuario`, `status`) VALUES
-(4, 'Ricardo', 'faleconosco@milbrath.com.br', '81bce1f3bf343c464685d875c626820cdb58e309', 1, 'Ativo');
-
---
--- Índices para tabelas despejadas
---
-
---
--- Índices para tabela `categoria`
---
-ALTER TABLE `categoria`
-  ADD PRIMARY KEY (`id_categoria`);
-
---
--- Índices para tabela `estoque`
---
-ALTER TABLE `estoque`
-  ADD PRIMARY KEY (`id_estoque`);
-
---
--- Índices para tabela `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id_usuario`);
-
---
--- AUTO_INCREMENT de tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `categoria`
---
-ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT de tabela `estoque`
---
-ALTER TABLE `estoque`
-  MODIFY `id_estoque` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+(1, 'Ricardo', 'faleconosco@milbrath.com.br', '81bce1f3bf343c464685d875c626820cdb58e309', 1, 'Ativo');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
